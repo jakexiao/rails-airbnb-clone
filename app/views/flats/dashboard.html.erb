@@ -2,4 +2,7 @@
     <% @my_flats.each do |flat| %>
         <h1> <%= flat.name %> </h1>
      <% end %>
-<% end %> 
+<% end %>
+
+<%= link_to "add a new flat", new_flat_path %>
+
