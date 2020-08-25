@@ -1,0 +1,5 @@
+<% if @current_user.role == "owner" %>
+    <% @my_flats.each do |flat| %>
+        <h1> <%= flat.name %> </h1>
+     <% end %>
+<% end %> 
