@@ -17,18 +17,20 @@
       </div>
     </div>
     </div>
-    <h1>Check out our flats (<%= @flats.count %>)</h1>
-    <% @flats.each do |flat|%>
-      <div class="cards">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= flat.photo %>')">
-          <%= flat.name %>
-        </div>
-      </div>
-      <div>  <%= flat.name %> </div>
-      <div>  <%= flat.address %> </div>
-      <div>  $<%= flat.price %> </div>
-      <div>  <%= link_to "More info", flat_path(flat) %> </div>
-    <% end %>
+<h1>Check out our flats (<%= @flats.count %>)</h1>
+    <div class="cards">
+      <% @flats.each do |flat|%>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= flat.photo %>')">
+          <div row>
+            <div class="col align-self-center">
+              <h2><%= flat.name %></h2>
+              </div>
+              <p><%= flat.address %></p>
+              <p>$<%= flat.price %></p>
+              <%= link_to "More info", flat_path(flat) %> 
+            </div>
+          </div>
+        <% end %>
+    </div>
   <%= render 'shared/footer'%>
 </div>
-
