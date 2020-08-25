@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Flat.destroy_all
+
+user1 = User.create!(
+    email: "airbnb@airbnb.com",
+    password: "12345678"
+)
 
 Flat.create!(
   name: 'Stylish House Close to River Thames',
@@ -12,7 +19,7 @@ Flat.create!(
   description: 'Lovely warm comfortable and stylishly furnished house. Private bedroom and bathroom with shared living areas.',
   price: 65,
   photo: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-  user_id:1
+  user_id: user1.id
 )
 Flat.create!(
   name: 'St Pancras Clock Tower Guest Suite',
@@ -20,7 +27,7 @@ Flat.create!(
   description: 'A mini apartment within the clock tower apartment at St Pancras Station, with its own en suite bathroom and kitchen and sitting area.',
   price: 110,
   photo: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-  user_id:1
+  user_id: user1.id
 )
 Flat.create!(
   name: 'Jake Home',
@@ -28,6 +35,6 @@ Flat.create!(
   description: 'A lovely apartment in Alges along the river.',
   price: 100,
   photo:"https://images.unsplash.com/photo-1560026301-88340cf16be7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-  user_id:1
+  user_id: user1.id
 )
 
