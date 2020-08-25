@@ -1,10 +1,11 @@
 class FlatsController < ApplicationController
   def index
-    @flat = Flats.all
+    @flats = Flat.all
   end
 
   def show
     @flat = Flat.find(params[:id])
+    @flats = Flat.all
   end
 
   def new
@@ -18,11 +19,10 @@ class FlatsController < ApplicationController
         render :new
     end
   end
-end
 
-private
+  private
 
-  def restaurant_params
-    params.require(:flat).permit(:address, :price, :name, :photo, :description)
-  end
+    def restaurant_params
+      params.require(:flat).permit(:address, :price, :name, :photo, :description)
+    end
 end
