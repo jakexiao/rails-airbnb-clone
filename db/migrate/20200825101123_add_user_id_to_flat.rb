@@ -3,3 +3,4 @@ class AddUserIdToFlat < ActiveRecord::Migration[6.0]
     add_reference :flats, :user, foreign_key: true
   end
 end
+
