@@ -1,18 +1,34 @@
-<<<<<<< HEAD
-<h1>Experience a complete new way to stay wherever you like on the planet!</h1>
-<p>We help you to find the most customized accomodations.</p>
+<%= render 'shared/navbar' %>
+<div id="home-container">
+  <div id="content-wrap">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+      <div class="container">
+        <h1>Experience a complete new way to stay wherever you like on the planet!</h1>
+        <p>We help you to find the most customized accomodations.</p>
+        <%= form_tag(flats_path, :method => :get) do |f| %>
+        <%= text_field_tag :query %>
+        <%= submit_tag 'search' %>
+        <% end %>
+        <div class="row">
+          <div class="col align-self-end">
+            <%= link_to "Book now", "#", class: "btn btn-ghost" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <h1>Check out our flats (<%= @flats.count %>)</h1>
+    <% @flats.each do |flat|%>
+      <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= flat.photo %>')">
+          <%= flat.name %>
+        </div>
+      </div>
+      <div>  <%= flat.name %> </div>
+      <div>  <%= flat.address %> </div>
+      <div>  $<%= flat.price %> </div>
+      <div>  <%= link_to "More info", flat_path(flat) %> </div>
+    <% end %>
+  <%= render 'shared/footer'%>
+</div>
 
-<%= form_tag(flats_path, :method => :get) do |f| %>
-    <%= text_field_tag :query %>
-    <%= submit_tag 'search' %>
-<% end %>
-
-<h1>Check out our flats (<%= @flats.count %>)</h1>
-<% @flats.each do |flat|%>
-    <div>  <%= flat.name %> </div>
-    <div>  <%= flat.address %> </div>
-    <div>  $<%= flat.price %> </div>
-    <div>  <%= link_to "More info", flat_path(flat) %> </div>
-<% end %>
-=======
->>>>>>> navbar-footer-banner
