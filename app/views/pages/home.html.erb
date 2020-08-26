@@ -5,7 +5,7 @@
       <div class="container">
         <h1>Experience a complete new way to stay wherever you like on the planet!</h1>
         <p>We help you to find the most customized accomodations.</p>
-        <%= form_tag(root_path, :method => :get) do |f| %>
+        <%= form_tag(flats_path, :method => :get) do |f| %>
         <%= text_field_tag :query %>
         <%= submit_tag 'search' %>
         <% end %>
@@ -24,12 +24,12 @@
           <div row>
             <div class="col align-self-center">
               <h2><%= flat.name %></h2>
-              </div>
+            </div>
               <p><%= flat.address %></p>
               <p>$<%= flat.price %></p>
               <%= link_to "More info", flat_path(flat) %>
-            </div>
           </div>
+        </div>
         <% end %>
     </div>
   <%= render 'shared/footer'%>
