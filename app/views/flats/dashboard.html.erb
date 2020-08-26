@@ -1,7 +1,19 @@
+
 <% if @current_user.role == "owner" %>
-    <% @my_flats.each do |flat| %>
-        <h1> <%= flat.name %> </h1>
-     <% end %>
+<div class="cards">
+<% @my_flats.each do |flat|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= flat.photo %>')">
+    <div row>
+      <div class="col align-self-center">
+        <h2><%= flat.name %></h2>
+      </div>
+        <p><%= flat.address %></p>
+        <p>$<%= flat.price %></p>
+        <%= link_to "More info", flat_path(flat) %>
+    </div>
+  </div>
+  <% end %>
+</div>
 <% end %>
 
 <%= link_to "add a new flat", new_flat_path %>
