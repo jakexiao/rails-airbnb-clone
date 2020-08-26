@@ -38,17 +38,19 @@
     color: white;
     margin: 10px;
     font-weight: bold;
+
 }
 .card-category p {
     color: black;
     margin: 8px;
 }
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
-    margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 10px;
 }
+
 .thumb {
     padding-bottom: 60%;
     background-size: cover;
@@ -85,3 +87,4 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
+
