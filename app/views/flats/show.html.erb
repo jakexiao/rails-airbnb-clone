@@ -1,9 +1,21 @@
-<%= @flat.name %>
-<ul>
-    <li>
-      <%= @flat.name %>
-      <%= @flat.address %>
-      <%= @flat.price %>
-      <%= image_tag @flat.photo %>
-    </li>
-</ul>
+<div class="container_show">
+  <div id="content-wrap">
+
+
+    <div class="row">
+     <div class="col-sm-12 col-md-12">
+
+      <h2> <%= @flat.name %> </h2>
+       <ul>
+         <li> <div class="pic"> <%= image_tag @flat.photo %></div></li>
+         <li> <strong> <div class="price"> <%= @flat.price %> €</div> </strong></li>
+         <li> <h6><div class="address"> <%= @flat.address %>  </div></h6></li>
+       </ul>
+      <%= link_to "Back to Flats", root_path, class: "btn btn-ghost" %>
+    </div>
+   </div>
+ </div>
+</div>
+
+
+<%= render 'shared/footer'%>

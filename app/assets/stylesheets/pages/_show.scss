@@ -1,0 +1,66 @@
+.container_show {
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+
+
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.row {
+  justify-content: center;
+}
+
+
+.row ul {
+  list-style-type: none;
+  padding: 1.5rem;
+}
+
+.pic {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+
+}
+
+
+.address {
+  text-align: right;
+  color: grey
+
+}
+
+.address:hover {
+  color: #A9A9A9;
+}
+
+.price {
+  text-align: right;
+  padding: 1rem;
+  color:grey
+}
+
+.btn {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+
+}
+
+.btn:hover {
+  color: #A9A9A9;
+
+}
+
