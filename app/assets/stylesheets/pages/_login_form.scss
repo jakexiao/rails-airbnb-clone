@@ -1,0 +1,29 @@
+.container-form {
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-form {
+   display: inline-block;
+   margin: 20px 0 auto;
+   width: 100%;
+   text-align: center;
+}
+
+.signup-button {
+  text-align: center;
+  justify-content: center;
+  display: inline-block;
+  display: flex;
+  margin-top: 5px;
+}
