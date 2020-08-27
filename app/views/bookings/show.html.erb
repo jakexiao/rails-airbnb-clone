@@ -1,11 +1,11 @@
-<h2> <%= @flat.name %> </h2>
+<h2> <%= @booking.flat.name %> </h2>
        <ul>
-         <li> <div class=""> <%= image_tag @flat.photo %></div></li>
-         <li> <strong> <div class="price"> <%= @flat.price %> $</div> </strong></li>
-         <li> <h6><div class="address"> <%= @flat.address %>  </div></h6></li>
-         <li> <h6><div class=""> <%= @booking.start_date %>  </div></h6></li>
-         <li> <h6><div class=""> <%= @booking.end_date %>  </div></h6></li>
-         <li> <h6><div class=""> <%= @booking.guets_number %>  </div></h6></li>
+         <li> <div class=""> <%= image_tag @booking.flat.photo %></div></li>
+         <li> <strong> <div class="price"> <%= @booking.flat.price %> $</div> </strong></li>
+         <li> <h6><div class="address"> <%= @booking.flat.address %>  </div></h6></li>
+         <li> <h6><div class=""> <%= @booking.start_date.to_date %>  </div></h6></li>
+         <li> <h6><div class=""> <%= @booking.end_date.to_date %>  </div></h6></li>
+         <li> <h6><div class=""> <%= @booking.guests_number %>  </div></h6></li>
        </ul>
       <%= link_to "Back to Dashboard", dashboard_path, class: "" %>
 
