@@ -17,5 +17,12 @@
  </div>
 </div>
 
+
+
 <%= render '/bookings/form', flat: @flat, booking: @booking %>
+<ul class="list-group"> 
+  <% @booking.reviews.each do |review| %> 
+  <li class="list-group-item"><%= review.content %></li> 
+  <% end %> 
+</ul> 
 <%= render 'shared/footer'%>

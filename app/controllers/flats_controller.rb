@@ -38,11 +38,6 @@ class FlatsController < ApplicationController
     end
   end
 
-  def dashboard
-    @my_flats = current_user.flats
-    @current_user = current_user
-  end
-
   private
 
     def flat_params
