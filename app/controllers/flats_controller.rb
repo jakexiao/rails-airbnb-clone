@@ -19,7 +19,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
-    @flats = Flat.all
+    @booking = Booking.new
   end
 
   def new
@@ -29,7 +29,7 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     @flat.user_id = current_user.id
-      if @flat.save 
+      if @flat.save
         current_user.role = "owner"
         current_user.save
         redirect_to flat_path(@flat)
@@ -41,7 +41,7 @@ class FlatsController < ApplicationController
   def dashboard
     @my_flats = current_user.flats
     @current_user = current_user
-  end 
+  end
 
   private
 
