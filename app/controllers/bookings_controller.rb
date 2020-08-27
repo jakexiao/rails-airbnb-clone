@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @bookings = Booking.all
   end
 
   def new
@@ -14,11 +13,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # @booking.user_id = current_user.id
+    @flat = Flat.find(params[:flat_id])
+    @booking.flat = @flat
+    @booking.user = current_user
       if @booking.save
         redirect_to booking_path(@booking)
       else
-        render :new
+        render "/flats/show"
     end
   end
 
