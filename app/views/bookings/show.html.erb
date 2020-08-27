@@ -1,0 +1,12 @@
+<h2> <%= @flat.name %> </h2>
+       <ul>
+         <li> <div class=""> <%= image_tag @flat.photo %></div></li>
+         <li> <strong> <div class="price"> <%= @flat.price %> $</div> </strong></li>
+         <li> <h6><div class="address"> <%= @flat.address %>  </div></h6></li>
+         <li> <h6><div class=""> <%= @booking.start_date %>  </div></h6></li>
+         <li> <h6><div class=""> <%= @booking.end_date %>  </div></h6></li>
+         <li> <h6><div class=""> <%= @booking.guets_number %>  </div></h6></li>
+       </ul>
+      <%= link_to "Back to Dashboard", dashboard_path, class: "" %>
+
+<%= render 'shared/footer'%>
