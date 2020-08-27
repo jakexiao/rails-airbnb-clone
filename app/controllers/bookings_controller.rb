@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -30,6 +31,7 @@ class BookingsController < ApplicationController
   end
 
   def dashboard
+    @my_flats = current_user.flats
     @my_bookings = current_user.bookings
     @current_user = current_user
   end

@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      render "/bookings/show"
     end
   end
 

@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   resources :flats do
     resources :bookings, only: :create
   end
-  get "/dashboard", to: "flats#dashboard"
-  resources :bookings
   get "/dashboard", to: "bookings#dashboard"
   resources :bookings do
     resources :reviews, only: [:new, :create, :destroy]
