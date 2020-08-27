@@ -25,9 +25,12 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to dashboard_path(@booking)
+    # @booking = Booking.find(params[:id])
+    # @booking.destroy
+    # redirect_to dashboard_path(@booking)
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to booking_path(@review.booking), notice: "review deleted"
   end
 
   def dashboard

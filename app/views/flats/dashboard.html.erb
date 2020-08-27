@@ -16,5 +16,20 @@
 </div>
 <% end %>
 
-<%= link_to "add a new flat", new_flat_path %>
+<div class="cards">
+<% @my_bookings.each do |booking|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= flat.photo %>')">
+    <div row>
+      <div class="col align-self-center">
+        <h2><%= booking.start_date %></h2>
+      </div>
+        <p><%= booking.end_date %></p>
+        <p>$<%= booking.guests_number %></p>
+        <%= link_to "More info", booking_path(booking) %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "add a new booking", new_flat_path %>
 

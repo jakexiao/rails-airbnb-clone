@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def new
-    @booking = Booking.find(params[:booking_id])  
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
 
@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     if @review.save
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking), notice: "review saved"
     else
       render "/bookings/show"
     end
@@ -20,10 +20,10 @@ class ReviewsController < ApplicationController
     @review.destroy
     redirect_to booking_path(@review.booking)
   end
-      
+
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comments, :rating)
   end
 end
