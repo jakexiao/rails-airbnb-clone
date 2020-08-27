@@ -9,6 +9,7 @@ Flat.destroy_all
 User.destroy_all
 
 
+
 user1 = User.create!(
     email: "airbnb@airbnb.com",
     password: "12345678"
@@ -38,4 +39,5 @@ Flat.create!(
   photo:"https://images.unsplash.com/photo-1560026301-88340cf16be7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
   user_id: user1.id
 )
+
 
