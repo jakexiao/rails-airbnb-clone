@@ -6,10 +6,8 @@
   justify-content: center;
   margin-bottom: 32px;
 
-
   font-size: 16px;
   font-weight: lighter;
-
 }
 #content-wrap {
   padding-bottom: 2.5rem;
@@ -19,9 +17,6 @@
 .row {
   justify-content: center;
 }
-
-
-
 
 .row ul {
   list-style-type: none;
@@ -34,7 +29,6 @@
   }
 }
 
-
 .address {
   text-align: right;
   color: grey;
@@ -42,16 +36,15 @@
 
 .address:hover {
   color: #a9a9a9;
-
+}
 .address {
   text-align: right;
   color: black;
   font-size: 16px;
   font-weight: lighter;
   &:hover {
-  color: #A9A9A9;
+    color: #a9a9a9;
   }
-
 }
 .price {
   text-align: right;
@@ -61,7 +54,6 @@
 
   font-size: 16px;
   font-weight: lighter;
-
 }
 .btn {
   color: #4a4a4a;
@@ -71,8 +63,5 @@
   font-weight: lighter;
 }
 .btn:hover {
-
   color: #a9a9a9;
 }
-
-

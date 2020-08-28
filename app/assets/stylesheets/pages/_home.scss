@@ -1,16 +1,24 @@
 // Specific CSS for your home-page
 #page-container {
-    position: relative;
-    min-height: 100vh;
-  }
+  position: relative;
+  min-height: 100vh;
+}
 
-  #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
+#content-wrap {
+  padding-bottom: 2.5rem; /* Footer height */
+}
 
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; /* Footer height */
+}
+
+.thumb .main h2 {
+  color: white;
+}
+
+.flat-name {
+  color: white;
+}
