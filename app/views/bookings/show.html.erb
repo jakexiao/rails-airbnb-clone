@@ -1,12 +1,30 @@
-<h2> <%= @booking.flat.name %> </h2>
+ <div class="container_show">
+  <div id="content-wrap">
+
+
+    <div class="row">
+     <div class="col-sm-12 col-md-12">
+
+      <h2> <%= @booking.flat.name  %> </h2>
        <ul>
-         <li> <div class=""> <%= image_tag @booking.flat.photo %></div></li>
-         <li> <strong> <div class="price"> <%= @booking.flat.price %> $</div> </strong></li>
+         <li> <div class="pic"> <%= image_tag @booking.flat.photo %></div></li>
+         <li> <% @booking.flat.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %> </li>
+         <li> <strong> <div class="price"> <%= @booking.total_price %> $</div> </strong></li>
          <li> <h6><div class="address"> <%= @booking.flat.address %>  </div></h6></li>
-         <li> <h6><div class=""> <%= @booking.start_date.to_date %>  </div></h6></li>
-         <li> <h6><div class=""> <%= @booking.end_date.to_date %>  </div></h6></li>
-         <li> <h6><div class=""> <%= @booking.guests_number %>  </div></h6></li>
+         <li> <h6><div class=""> Check in date: <%= @booking.start_date.to_date %>  </div></h6> </li>
+         <li> <h6><div class=""> Check out date: <%= @booking.end_date.to_date %>  </div></h6> </li>
+         <li> <h6><div class=""> Guest number: <%= @booking.guests_number %>  </div></h6> </li>
        </ul>
+
+
+      <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-ghost" %>
+    </div>
+   </div>
+ </div>
+</div>
+
 
 
 <div class="container">
