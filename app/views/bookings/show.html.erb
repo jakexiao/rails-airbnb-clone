@@ -17,6 +17,8 @@
          <li> <h6><div class=""> Check out date: <%= @booking.end_date.to_date %>  </div></h6> </li>
          <li> <h6><div class=""> Guest number: <%= @booking.guests_number %>  </div></h6> </li>
        </ul>
+
+
       <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-ghost" %>
     </div>
    </div>
@@ -24,25 +26,43 @@
 </div>
 
 
-<div >
-  <div>
+
+<div class="container">
+  <div class="content-wrap">
       <%= simple_form_for([@booking, @review]) do |f| %>
       <%= f.input :comments %>
       <%= f.input :rating, collection: [0,1,2,3,4,5] %>
-      <%= f.submit %>
+      <%= f.submit class: "btn btn-ghost" %>
     <% end %>
+    <br>
+
 
   </div>
-</div>
 
+
+<div class="review-list">
+  <h6>Reviews  <%= @booking.reviews.size %> </h6>
 <ul class="list-group">
+
   <% @booking.reviews.each do |review| %>
-  <li class="list-group-item"><%= review.comments %></li>
-  <li class="list-group-item"><%= review.rating %></li>
-  <%= link_to "Delete",
+  <li class="list-group-item review-item">
+   <div> <%= review.comments %>
+
+    <%= review.rating %>
+
+    </div>
+
+    <div>
+
+    <%= link_to "Delete",
         booking_path(review),
         method: :delete,
         data: { confirm: "Are you sure?" } %>
+    </div>
   <% end %>
+
+  </li>
 </ul>
+</div>
+</div>
 <%= render 'shared/footer'%>
