@@ -20,6 +20,13 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
+    # @bookings = @flat.bookings
+    @reviews = []
+    @flat.bookings.each do |booking|
+      booking.reviews.each do |review|
+        @reviews << review
+      end
+    end
   end
 
   def new
@@ -35,12 +42,23 @@ class FlatsController < ApplicationController
         redirect_to flat_path(@flat)
       else
         render :new
-    end
+      end
+  end
+
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+
+    redirect_to flat_path(@flat)
   end
 
   private
 
     def flat_params
-      params.require(:flat).permit(:address, :price, :name, :photo, :description)
+      params.require(:flat).permit(:address, :price, :name, :photo, :description, photos: [])
     end
 end
