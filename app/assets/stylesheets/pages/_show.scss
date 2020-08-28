@@ -5,8 +5,11 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+
+
   font-size: 16px;
   font-weight: lighter;
+
 }
 #content-wrap {
   padding-bottom: 2.5rem;
@@ -16,18 +19,30 @@
 .row {
   justify-content: center;
 }
+
+
+
+
 .row ul {
   list-style-type: none;
   padding: 1.5rem;
 }
 .pic {
-  border: 2px solid #ddd;
-  border-radius: 4px;
   padding: 5px;
   img {
     width: 500px;
   }
 }
+
+
+.address {
+  text-align: right;
+  color: grey;
+}
+
+.address:hover {
+  color: #a9a9a9;
+
 .address {
   text-align: right;
   color: black;
@@ -36,21 +51,28 @@
   &:hover {
   color: #A9A9A9;
   }
+
 }
 .price {
   text-align: right;
   padding: 1rem;
-  color: black;
+
+  color: grey;
+
   font-size: 16px;
   font-weight: lighter;
+
 }
 .btn {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: #4a4a4a;
+  border: 1px solid #4a4a4a;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
 }
 .btn:hover {
-  color: #A9A9A9;
+
+  color: #a9a9a9;
 }
+
+
