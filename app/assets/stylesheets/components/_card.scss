@@ -9,7 +9,7 @@
     position: relative;
     top: 0;
     transition: all .1s ease-in;
-      
+
     &:hover {
       top: -2px;
       box-shadow: 0 4px 5px rgba(0,0,0,0.2);
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-
+    border-radius: 10px 10px;
 }
 .card-category h2 {
     color: white;
@@ -47,8 +47,8 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin: 10px;
+  grid-gap: 60px;
+  margin: 50px;
 }
 
 .thumb {
