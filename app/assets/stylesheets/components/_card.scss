@@ -34,7 +34,7 @@
     background-color: white;
 
 }
-.card-category h2 {
+.card-category h4 {
     color: white;
     margin: 10px;
     font-weight: bold;
@@ -55,6 +55,22 @@
     padding-bottom: 60%;
     background-size: cover;
     background-position: center center;
+}
+
+.booking-card {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 30px;
+  font-size: 14px;
+  border-radius: 3px;
+
+  .booking-dates {
+    font-size: 14px;
+  }
+
+  p {
+    margin-bottom: .2rem;
+  }
 }
 
 // Smallest device

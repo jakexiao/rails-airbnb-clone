@@ -17,10 +17,11 @@
 
 <div class="cards">
 <% @my_bookings.each do |booking|%>
-    <div>
-        <h2><%= booking.flat.name %></h2>
-        <h2><%= booking.start_date %></h2>
-        <p><%= booking.end_date %></p>
+    <div class="booking-card">
+        <h4><%= booking.flat.name %></h4>
+        <p class="booking-dates">
+          <%= booking.start_date.strftime('%B %e, %Y') %> - <%= booking.end_date.strftime('%B %e, %Y') %>
+        </p>
         <p>$<%= booking.guests_number %></p>
         <%= link_to "More info", booking_path(booking) %>
     </div>
