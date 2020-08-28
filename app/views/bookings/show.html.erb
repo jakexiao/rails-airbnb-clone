@@ -9,4 +9,26 @@
        </ul>
       <%= link_to "Back to Dashboard", dashboard_path, class: "" %>
 
+<div >
+  <div>
+      <%= simple_form_for([@booking, @review]) do |f| %>
+      <%= f.input :comments %>
+      <%= f.input :rating, collection: [0,1,2,3,4,5] %>
+      <%= f.submit %>
+    <% end %>
+
+    <%= link_to "Back to home page", root_path %>
+  </div>
+</div>
+
+<ul class="list-group">
+  <% @booking.reviews.each do |review| %>
+  <li class="list-group-item"><%= review.comments %></li>
+  <li class="list-group-item"><%= review.rating %></li>
+  <%= link_to "Delete",
+        booking_path(review),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  <% end %>
+</ul>
 <%= render 'shared/footer'%>

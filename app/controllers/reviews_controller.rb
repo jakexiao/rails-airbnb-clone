@@ -8,23 +8,22 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
-      if @review.save
-        redirect_to booking_path(@booking)
-      else
-        render :new
-      end
+    if @review.save
+      redirect_to booking_path(@booking), notice: "review saved"
+    else
+      render "/bookings/show"
     end
+  end
 
-    def destroy
-      @review = Review.find(params[:id])
-      @review.destroy
-      redirect_to booking_path(@booking)
-    end
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to booking_path(@review.booking)
+  end
 
-    private
+  private
 
-    def review_params
-      params.require(review).permit(:comments, :rating)
-    end
-
+  def review_params
+    params.require(:review).permit(:comments, :rating)
+  end
 end

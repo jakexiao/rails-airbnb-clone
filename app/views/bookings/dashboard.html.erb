@@ -1,0 +1,28 @@
+<% if @current_user.role == "owner" %>
+<div class="cards">
+<% @my_flats.each do |flat|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= flat.photo %>')">
+    <div row>
+      <div class="col align-self-center">
+        <h2><%= flat.name %></h2>
+      </div>
+        <p><%= flat.address %></p>
+        <p>$<%= flat.price %></p>
+        <%= link_to "More info", flat_path(flat) %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
+
+<div class="cards">
+<% @my_bookings.each do |booking|%>
+    <div>
+        <h2><%= booking.flat.name %></h2>
+        <h2><%= booking.start_date %></h2>
+        <p><%= booking.end_date %></p>
+        <p>$<%= booking.guests_number %></p>
+        <%= link_to "More info", booking_path(booking) %>
+    </div>
+  <% end %>
+</div>
