@@ -1,20 +1,40 @@
 .banner {
     background-size: cover;
     background-position: center;
-    padding: 150px 0;
+    border-radius: 5px;
+    padding: 90px 0;
+    margin: 50px;
   }
-  
+
   .banner h1 {
     margin: 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .banner p {
     font-size: 20px;
+    font-weight: bold;
+    text-align: left
+  }
+
+  .banner p {
+    font-size: 15px;
     color: white;
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-align: left
   }
+
+  .search-input, .search-btn {
+    border-radius: 15px 0 0 15px;
+    border: none;
+  }
+
+  .search-btn {
+    border-radius: 0 15px 15px 0;
+    border: none;
+  }
+
+  .title {
+   font-size: 18px;
+   opacity: .7;
+  }
+
