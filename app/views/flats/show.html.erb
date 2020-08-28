@@ -8,6 +8,9 @@
       <h2> <%= @flat.name %> </h2>
        <ul>
          <li> <div class="pic"> <%= image_tag @flat.photo %></div></li>
+         <li> <% @flat.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %> </li>
          <li> <strong> <div class="price"> <%= @flat.price %> $</div> </strong></li>
          <li> <h6><div class="address"> <%= @flat.address %>  </div></h6></li>
        </ul>
@@ -18,12 +21,14 @@
 </div>
 
 
+<div>
+  <%= render '/bookings/form', flat: @flat, booking: @booking %>
 
-<%= render '/bookings/form', flat: @flat, booking: @booking %>
-<ul class="list-group">
-  <% @booking.reviews.each do |review| %>
-  <li class="list-group-item"><%= review.comments %></li>
-  <li class="list-group-item"><%= review.rating %></li>
-  <% end %>
-</ul>
+  <ul class="list-group">
+    <% @reviews.each do |review| %>
+    <li class="list-group-item"><%= review.comments %></li>
+    <li class="list-group-item"><%= review.rating %></li>
+    <% end %>
+  </ul>
+</div>
 <%= render 'shared/footer'%>
